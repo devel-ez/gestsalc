@@ -1,7 +1,20 @@
 <?php
-
+/* -------------------------------------------------------------------------- */
+/*                          Capturar as rotas da URL                          */
+/* -------------------------------------------------------------------------- */
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
 $routesArray = array_filter($routesArray);
+
+/* -------------------------------------------------------------------------- */
+/*                       Limpar a URL para variaveis GET                      */
+/* -------------------------------------------------------------------------- */
+foreach ($routesArray as $key => $value) {
+
+    $value = explode("?", $value)[0];
+    $routesArray[$key] = $value;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt_br">
@@ -43,10 +56,10 @@ $routesArray = array_filter($routesArray);
         <div class="content-wrapper">
             <?php
 
-            echo '<pre>';
-            print_r($routesArray);
-            echo '</pre>';
 
+            // echo '<pre>';
+            // print_r($routesArray);
+            // echo '</pre>';
 
             if (!empty($routesArray[1])) {
                 if (
@@ -55,6 +68,8 @@ $routesArray = array_filter($routesArray);
                     $routesArray[1] == "operadores"
                 ) {
                     include "views/pages/" . $routesArray[1] . "/" . $routesArray[1] . ".php";
+                } else {
+                    include "views/pages/404/404.php";
                 }
             } else {
                 include "views/pages/inicio/inicio.php";
