@@ -1,0 +1,15 @@
+.login-page, .login-register{
+    background-image: url('../../img/backgroundLogin.png');
+    background-color: rgba(255, 193, 7);
+    background-blend-mode: multiply;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-logo a{
+    color: rgb(29, 28, 28);
+    font-size: 60px;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(247, 243, 243, 0.918);
+}

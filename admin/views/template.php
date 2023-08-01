@@ -34,9 +34,17 @@ foreach ($routesArray as $key => $value) {
     <link rel="stylesheet" href="views/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="views/assets/plugins/adminlte/css/adminlte.min.css">
+    <!-- Template css -->
+    <link rel="stylesheet" href="views/assets/custom/template/template.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed ">
+
+   <?php
+    include "views/pages/login/login.php";
+    echo '</body></head>';
+    return;
+    ?>
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -72,7 +80,9 @@ foreach ($routesArray as $key => $value) {
                     include "views/pages/404/404.php";
                 }
             } else {
-                include "views/pages/inicio/inicio.php";
+                // include "views/pages/inicio/inicio.php";
+
+
             }
             ?>
             <!-- Content Header (Page header) -->
