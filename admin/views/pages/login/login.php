@@ -10,7 +10,11 @@
 
                 <form action="../../index3.html" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input 
+                        type="email" 
+                        class="form-control" 
+                        placeholder="Email"
+                        name="loginEmail">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -18,13 +22,25 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Senha">
+                        <input type="password" 
+                        class="form-control" 
+                        placeholder="Password"
+                        name="loginPassword">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
+
+                    <?php 
+                    
+                    require_once "controllers/admins.controller.php";
+
+                    $login = new AdminsController();
+                    $login -> login();
+                    ?>
+
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
@@ -34,6 +50,7 @@
                                 </label>
                             </div>
                         </div>
+
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-dark btn-block">Logar</button>
