@@ -8,24 +8,19 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Login</p>
 
-                <form action="../../index3.html" method="post">
+            <form method="post" class="needs-validation was-validate" novalidate>
                     <div class="input-group mb-3">
-                        <input 
-                        type="email" 
-                        class="form-control" 
-                        placeholder="Email"
-                        name="loginEmail">
+                <input type="email" class="form-control" placeholder="Email" name="loginEmail" onchange="validateJS(event,'email')" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                        <div class="valid-feedback">Tudo certo!</div>
+                        <div class="invalid-feedback">A mesagem está no formularios.js</div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" 
-                        class="form-control" 
-                        placeholder="Password"
-                        name="loginPassword">
+                        <input type="password" class="form-control" placeholder="Password" name="loginPassword" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -33,12 +28,12 @@
                         </div>
                     </div>
 
-                    <?php 
-                    
+                    <?php
+
                     require_once "controllers/admins.controller.php";
 
                     $login = new AdminsController();
-                    $login -> login();
+                    $login->login();
                     ?>
 
                     <div class="row">
@@ -64,3 +59,7 @@
     </div>
     <!-- /.login-box -->
 </div>
+<!-- jQuery -->
+<script src="views/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Validação do bootstrap e personalizada -->
+<script src="views/assets/custom/formularios/formularios.js"></script>
