@@ -106,6 +106,7 @@ foreach ($routesArray as $key => $value) {
     <script src="views/assets/plugins/adminlte/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="views/assets/plugins/adminlte/js/demo.js"></script>
+    
 </body>
 
 </html>

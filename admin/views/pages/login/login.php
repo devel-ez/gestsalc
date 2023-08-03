@@ -17,10 +17,10 @@
                             </div>
                         </div>
                         <div class="valid-feedback">Tudo certo!</div>
-                        <div class="invalid-feedback">A mesagem está no formularios.js</div>
+                        <div class="invalid-feedback">Email inválido</div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="loginPassword" required>
+                        <input type="password" class="form-control" placeholder="Password" name="loginPassword"  require>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

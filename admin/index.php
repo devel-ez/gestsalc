@@ -20,6 +20,7 @@ header("Access-Control-Allow-Methods:POST");
 /* -------------------------------------------------------------------------- */
 
 require_once "controllers/template.controller.php";
+require_once "controllers/curl.controller.php";
 
 $index = new TemplateController();
 $index -> index();
