@@ -25,7 +25,20 @@ class AdminsController
 
                 );
                 $response = CurlController::request($url, $method, $fields);
-                echo '<pre>'; print_r($response); echo '</pre>';
+                
+                if($response->status == 200){
+                    if($response->results[0]->rol_user != "admin"){
+                        echo '<div class="alert alert-danger">Você não permissão para logar</div>';
+                        return;
+                    }
+
+                    echo '<script>
+                    window.location = "'.$_SERVER["ReQUEST_URI"].'"
+                    </script>';
+                    
+                }else{
+                echo '<div class="alert alert-danger">'.$response->results.'</div>';
+                }
             } else {
 
                 echo '<div class="alert alert-danger">Erro no preenchimento dos campos</div>';
