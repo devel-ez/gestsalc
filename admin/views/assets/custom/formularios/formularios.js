@@ -33,3 +33,37 @@ function validateJS(event, type) {
 
     }
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                Função para relembrar as credenciais do login               */
+/* -------------------------------------------------------------------------- */
+
+function rememberMe(event) {
+
+    if (event.target.checked) {
+
+        localStorage.setItem("emailRemember", $('[name="loginEmail"]').val());
+        localStorage.setItem("checkRemember", true);
+    } else {
+
+        localStorage.removeItem("emailRemember");
+        localStorage.removeItem("checkRemember");
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*              Capturar o email para login do banco localstorage             */
+/* -------------------------------------------------------------------------- */
+$(document).ready(function () {
+
+    if (localStorage.getItem("emailRemember") != null) {
+
+        $('[name="loginEmail"]').val(localStorage.getItem("emailRemember"));
+
+    }
+    if (localStorage.getItem("checkRemember") != null && localStorage.getItem("checkRemember")) {
+        $('#remember').attr("checked", true);
+
+    }
+});
