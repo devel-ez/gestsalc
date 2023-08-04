@@ -1,7 +1,7 @@
 <div class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Gest</b>SALC</a>
+            <a href="/"><b>Gest</b>SALC</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">

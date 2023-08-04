@@ -26,11 +26,24 @@ class AdminsController
                 );
                 $response = CurlController::request($url, $method, $fields);
                 
+                /* -------------------------------------------------------------------------- */
+                /*                  Validar se escreveu os dados corretamente                 */
+                /* -------------------------------------------------------------------------- */
+
                 if($response->status == 200){
+                /* -------------------------------------------------------------------------- */
+                /*                        Validar se o usuário é admin                        */
+                /* -------------------------------------------------------------------------- */
                     if($response->results[0]->rol_user != "admin"){
-                        echo '<div class="alert alert-danger">Você não permissão para logar</div>';
+                        echo '<div class="alert alert-danger">Você não tem permissão para logar</div>';
                         return;
                     }
+
+                    /* -------------------------------------------------------------------------- */
+                    /*                          Criar variáveis de sessão                         */
+                    /* -------------------------------------------------------------------------- */
+
+                    $_SESSION["admin"] = $response->results[0];
 
                     echo '<script>
                     window.location = "'.$_SERVER["ReQUEST_URI"].'"

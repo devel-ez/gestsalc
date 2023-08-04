@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" role="button">
+            <a class="nav-link" href="/logout" role="button">
             <i class="fas fa-sign-out-alt" style="color: #2c2d30;"></i>
             </a>
         </li>

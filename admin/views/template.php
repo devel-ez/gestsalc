@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* -------------------------------------------------------------------------- */
 /*                          Capturar as rotas da URL                          */
 /* -------------------------------------------------------------------------- */
@@ -40,11 +41,17 @@ foreach ($routesArray as $key => $value) {
 
 <body class="hold-transition sidebar-mini layout-fixed ">
 
-   <?php
-    include "views/pages/login/login.php";
-    echo '</body></head>';
-    return;
+    <?php
+    if (!isset($_SESSION["admin"])) {
+
+        include "views/pages/login/login.php";
+        echo '</body></head>';
+        return;
+    }
     ?>
+    <?php
+    if(isset($_SESSION["admin"])): ?>
+
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -73,7 +80,8 @@ foreach ($routesArray as $key => $value) {
                 if (
                     $routesArray[1] == "processos" ||
                     $routesArray[1] == "administradores" ||
-                    $routesArray[1] == "operadores"
+                    $routesArray[1] == "operadores"||
+                    $routesArray[1] == "logout"
                 ) {
                     include "views/pages/" . $routesArray[1] . "/" . $routesArray[1] . ".php";
                 } else {
@@ -106,7 +114,7 @@ foreach ($routesArray as $key => $value) {
     <script src="views/assets/plugins/adminlte/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="views/assets/plugins/adminlte/js/demo.js"></script>
-    
+<?php endif?>
 </body>
 
 </html>

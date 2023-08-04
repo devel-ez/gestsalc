@@ -13,7 +13,7 @@ class CurlController
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://api.marketplace.com/'.$url,
+            CURLOPT_URL => 'http://api.gestsalc.com/'.$url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
