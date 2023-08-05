@@ -19,10 +19,21 @@
 
     <div class="container-fluid">
 
-    <?php
-    
-    include_once "actions/list.php"
-    ?>
+        <?php
+        if (isset($routesArray[2])) {
+
+
+            if ($routesArray[2] == "new" || $routesArray[2] == "edit") {
+
+                include_once "actions/" . $routesArray[2] . ".php";
+            }
+        } else {
+
+
+            include_once "actions/list.php";
+        }
+
+        ?>
 
     </div>
 </section>
