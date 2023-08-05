@@ -59,7 +59,6 @@
     </div>
     <!-- /.login-box -->
 </div>
-<!-- jQuery -->
-<script src="views/assets/plugins/jquery/jquery.min.js"></script>
+
 <!-- Validação do bootstrap e personalizada -->
 <script src="views/assets/custom/formularios/formularios.js"></script>

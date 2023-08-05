@@ -48,9 +48,9 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="administradores" class="nav-link <?php if ($routesArray[1] == "administradores") : ?>active<?php endif ?>">
+                    <a href="admins" class="nav-link <?php if ($routesArray[1] == "admins") : ?>active<?php endif ?>">
                         <i class="fas fa-user-cog"></i>
-                        <p>Administradores</p>
+                        <p>Admins</p>
                     </a>
                 </li>
                 <li class="nav-item ">
