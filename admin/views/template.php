@@ -14,9 +14,8 @@ foreach ($routesArray as $key => $value) {
     $value = explode("?", $value)[0];
     $routesArray[$key] = $value;
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="pt_br">
 
@@ -38,10 +37,7 @@ foreach ($routesArray as $key => $value) {
     <link rel="stylesheet" href="views/assets/plugins/adminlte/css/adminlte.min.css">
     <!-- Template css -->
     <link rel="stylesheet" href="views/assets/custom/template/template.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="views/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="views/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="views/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 
     <!-- jQuery -->
     <script src="views/assets/plugins/jquery/jquery.min.js"></script>
@@ -51,20 +47,36 @@ foreach ($routesArray as $key => $value) {
     <script src="views/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="views/assets/plugins/adminlte/js/adminlte.min.js"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="views/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="views/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="views/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="views/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="views/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="views/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="views/assets/plugins/jszip/jszip.min.js"></script>
-    <script src="views/assets/plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="views/assets/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="views/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="views/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="views/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+    <?php if (!empty($routesArray[1]) && !isset($routesArray[2])) : ?>
+        <?php if (
+            $routesArray[1] == "processos" ||
+            $routesArray[1] == "admins" ||
+            $routesArray[1] == "operadores" ||
+            $routesArray[1] == "logout"
+        ) : ?>
+
+            <!-- DataTables -->
+            <link rel="stylesheet" href="views/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+            <link rel="stylesheet" href="views/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+            <link rel="stylesheet" href="views/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+            <!-- DataTables  & Plugins -->
+            <script src="views/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="views/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+            <script src="views/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+            <script src="views/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+            <script src="views/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+            <script src="views/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+            <script src="views/assets/plugins/jszip/jszip.min.js"></script>
+            <script src="views/assets/plugins/pdfmake/pdfmake.min.js"></script>
+            <script src="views/assets/plugins/pdfmake/vfs_fonts.js"></script>
+            <script src="views/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+            <script src="views/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+            <script src="views/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+        <?php endif; ?>
+    <?php endif; ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed ">
